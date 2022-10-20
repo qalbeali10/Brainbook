@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_final_fields, unused_field
+
 import 'package:brainbook/data/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUpController extends GetxController {
   // instances
@@ -35,6 +39,35 @@ class SignUpController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController stateController = TextEditingController();
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void SignUpAuth(String email, String password) {
+    _auth
+        .createUserWithEmailAndPassword(email: email, password: password)
+        .then((value) {
+        Fluttertoast.showToast(
+        msg: "Account Created",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+        })
+        .onError((error, stackTrace){
+           Fluttertoast.showToast(
+        msg: error.toString(),
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+        });
+  }
 
 //  methods.
 

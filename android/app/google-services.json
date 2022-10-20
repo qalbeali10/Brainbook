@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708388112989",
+    "project_id": "brainbook-16332",
+    "storage_bucket": "brainbook-16332.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708388112989:android:eff292c485542b070f5bb4",
+        "android_client_info": {
+          "package_name": "com.example.brainbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708388112989-lmmd4saglio9j5ks92cp30ukpmh38cfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNVZ7Tk93tFyXBUtteTaCXHofWK8ZlmII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708388112989-lmmd4saglio9j5ks92cp30ukpmh38cfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

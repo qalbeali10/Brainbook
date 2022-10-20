@@ -133,10 +133,14 @@ class SignUp extends GetView<SignUpController> {
                 height: 25,
               ),
               ButtonWidget(
-                  title: "CREATE ACCOUNT",
-                  onTap: () => Get.toNamed(Routes.dashBoardScreen)
-                  //controller.onCreateTap,
-                  ),
+                title: "CREATE ACCOUNT",
+                // onTap: () => Get.toNamed(Routes.dashBoardScreen)
+                //controller.onCreateTap,
+                onTap: () {
+                  Get.toNamed(Routes.dashBoardScreen);
+                  controller.SignUpAuth(controller.emailController.text, controller.passwordController.text);
+                },
+              ),
               const SizedBox(
                 height: 35,
               ),
