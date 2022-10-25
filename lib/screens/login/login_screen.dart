@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, await_only_futures
 
 import 'package:brainbook/core/theme/values/colors.dart';
 import 'package:brainbook/core/theme/values/images.dart';
@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends GetView<LoginController> {
   LoginScreen({Key? key}) : super(key: key);
@@ -136,7 +137,11 @@ class LoginScreen extends GetView<LoginController> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () async {
+                      await LoginController;
+                      controller.signInWithGoogle();
+                      Get.toNamed(Routes.dashBoardScreen);
+                    },
                     child: Card(
                       color: Colors.white,
                       child: Padding(

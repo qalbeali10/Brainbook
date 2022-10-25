@@ -312,165 +312,622 @@ import 'package:get/get.dart';
 
 import '../screens/password_update/password_update_binding.dart';
 
-
-
-class AppPages{
-
+class AppPages {
   static final pages = [
-    GetPage(name: Routes.splashScreen, page: ()=> const SplashScreen(),),
-    GetPage(name: Routes.welcomeScreen, page: ()=> const WelcomeScreen(),),
-    GetPage(name: Routes.loginScreen, page: ()=>  LoginScreen(),binding:LoginBinding() ),
-    GetPage(name: Routes.signupScreen, page: ()=>  SignUp(),binding:SignUpBinding() ),
-    GetPage(name: Routes.forgotPasswordScreen, page: ()=>  ForgotPassword(),binding:ForgotPasswordBinding() ),
-    GetPage(name: Routes.verificationCodeScreen, page: ()=>  VerificationCode(), binding:VerficationBinding()),
-    GetPage(name: Routes.newPasswordScreen, page: ()=>  NewPassword(), binding:NewPasswordBinding()),
-    GetPage(name: Routes.passwordUpdateScreen, page: ()=>  PasswordUpdate(),binding: PasswordUpdateBinding()),
-    GetPage(name: Routes.dashBoardScreen, page: ()=>  DashBoard(),binding: DashBoardBinding()),
-    GetPage(name: Routes.translatorScreen, page: ()=>  TranslatorScreen(),binding: TranslatorBinding()),
-    GetPage(name: Routes.commonPhraseScreen, page: ()=>  CommonPhraseScreen(),binding: CommonPhrasesBinding()),
-    GetPage(name: Routes.audioScreen, page: ()=>  AudioScreen(),binding: AudioBinding()),
-    GetPage(name: Routes.ageResultScreen, page: ()=>  AgeResultScreen(),binding: AgeResultBinding()),
-    GetPage(name: Routes.gangSlangDetailScreen, page: ()=>  GangSlangDetailScreen(),binding: GangSlangDetailBinding()),
-    GetPage(name: Routes.nHTSAManualScreen, page: ()=>  SFSTMoreOptionScreen(),binding: SFTAMoreOptionBinding()),
-    GetPage(name: Routes.lawCaseDetailScreen, page: ()=>  CaseLawDetailScreen(),binding: CaseLawDetailsBinding()),
-    GetPage(name: Routes.trespasserApbDetailsScreen, page: ()=>  TrespasserApbDetailsScreen(),binding: TrespasserApbDetailBinding(),),
-    GetPage(name: Routes.addTrespasserDetailsScreen, page: ()=>  AddTrespasserDetailsScreen(),binding: TrespasserAddDetailBinding()),
-    GetPage(name: Routes.flashCardsScreen, page: ()=>  FlashCardsScreen(),binding: FlashCardsBinding()),
-    GetPage(name: Routes.flashCardsListScreen, page: ()=>  FlashCardsListScreen(),binding: FlashCardListBinding()),
-    GetPage(name: Routes.flashCardAddDetailsScreen, page: ()=>  FlashCardAddDetailsScreen(),binding: FlashCardAddDetailBinding()),
-    GetPage(name: Routes.pATTrackerListScreen, page: ()=>  PATTrackerListScreen(),binding: PatTrackerListBinding()),
-    GetPage(name: Routes.pATTrackerDetailScreen, page: ()=>  PATTrackerDetailScreen(),binding: PtaTrackerDetailBinding()),
-    GetPage(name: Routes.pATTrackerAddDetailsScreen, page: ()=>  PATTrackerAddDetailsScreen(),binding: PatTrackerAddDetailBinding()),
-    GetPage(name: Routes.askQuestionScreen, page: ()=>  AskQuestionScreen(),binding: AskQuestionBinding()),
-    GetPage(name: Routes.responseScreen, page: ()=>  ResponseScreen(),binding: ResponseBinding()),
-    GetPage(name: Routes.addResponseScreen, page: ()=>  AddResponseScreen(),binding: AddResponseBinding()),
-    GetPage(name: Routes.locationScreen, page: ()=>  LocationScreen(),binding: LocationBinding()),
-    GetPage(name: Routes.locationMoreInfoScreen, page: ()=>  LocationMoreInfoScreen(),binding: LocationMoreInfoBinding()),
-    GetPage(name: Routes.locationAddDetailsScreen, page: ()=>  LocationAddDetailsScreen(),binding: LocationAddDetailBinding()),
-    GetPage(name: Routes.trafficCodeScreen, page: ()=>  TrafficCodeScreen(),binding: TrafficCodeBinding()),
-    GetPage(name: Routes.trafficCodeAddDetailScreen, page: ()=>  TrafficCodeAddDetailScreen(),binding: TrafficAddDetailsBinding()),
-    GetPage(name: Routes.importantInfoScreen, page: ()=>  ImportantInfoScreen(),binding: ImportantInfoBinding()),
-    GetPage(name: Routes.switchStateScreen, page: ()=>  SwitchStateScreen(),binding: SwitchStateBinding()),
-    GetPage(name: Routes.redeemCardScreen, page: ()=>  RedeemCardScreen(),binding: RedeemCardBinding()),
-    GetPage(name: Routes.subscribeScreen, page: ()=>  SubscribeScreen(),binding: SubscribeBinding()),
-    GetPage(name: Routes.switchStateChangeScreen, page: ()=>  SwitchStateChangeScreen(),binding: SwitchStateChangeBinding()),
-    GetPage(name: Routes.warrantsScreen, page: ()=>  Warrants(),binding: WarrantsBinding()),
-    GetPage(name: Routes.federalCodeScreen, page: ()=>  FederalCode(),binding: FederalCodeBiding()),
-    GetPage(name: Routes.lessLethalScreen, page: ()=>  LessLethal(),binding: LessLethalBinding()),
-    GetPage(name: Routes.drugsRelatedScreen, page: ()=>  DrugsRelated(),binding: DrugsRelatedBinding()),
-    GetPage(name: Routes.deadCheckListScreen, page: ()=>  DeadCheckListScreen(),binding: DeadChecklistBinding()),
-    GetPage(name: Routes.ageCalculationScreen, page: ()=>  AgeCalculationScreen(),binding: AgeCalculationBinding()),
-    GetPage(name: Routes.gangSlangScreen, page: ()=>  GangSlangScreen(),binding: GangSlanBinding()),
-    GetPage(name: Routes.traficInvestigationScreen, page: ()=>  TraficInvestigationScreen(),binding: TrafficInvestigationBinding()),
-    GetPage(name: Routes.testifyingTipsScreen, page: ()=>  TestifyingTipsScreen(),binding: TestifyingBinding()),
-    GetPage(name: Routes.windowTintLawsScreen, page: ()=>  WindowTintLawsScreen(),binding: WindowTintLawsBinding()),
-    GetPage(name: Routes.standardizedFST, page: ()=>  StandardizedFST(),binding: StandardizedFstsBinding()),
-    GetPage(name: Routes.caseLawScreen, page: ()=>  CaseLawScreen(),binding: CaseLawBinding()),
-    GetPage(name: Routes.gladysMarsyScreen, page: ()=>  GladysMarsyScreen(),binding: GladysMarsyBinding()),
-    GetPage(name: Routes.gladysAdmonitionScreen, page: ()=>  GladysRAdmonitionScreen(),binding: GladysAdmonitionBinding()),
-    GetPage(name: Routes.marsyLawScreen, page: ()=>  MarsyLawScreen(),binding: MarsysLawBinding()),
-    GetPage(name: Routes.mirandaScreen, page: ()=>  MirandaScreen(),binding: MirandaBinding()),
-    GetPage(name: Routes.keysToCastleScreen, page: ()=>  KeysToCastleScreen(),binding: KeysToCastleBinding()),
-    GetPage(name: Routes.exigentCircumstancesScreen, page: ()=>  ExigentCircumstancesScreen(),binding: ExigentCircumstancesBinding()),
-    GetPage(name: Routes.vehicleStopFormScreen, page: ()=>  VehicleStopFormScreen(),binding: VehicleStopFormBinding()),
-    GetPage(name: Routes.trespasserAPBScreen, page: ()=>  TrespasserAPBScreen(),binding: TrespasserApbBinding()),
-    GetPage(name: Routes.frontPlatesScreen, page: ()=>  FrontPlatesScreen(),binding: FrontPlatesBinding()),
-    GetPage(name: Routes.recruitsStudyingScreen, page: ()=>  RecruitsStudyingScreen(),binding: RecruitsStudyingBunding()),
-    GetPage(name: Routes.subscriptionSurveyScreen, page: ()=>  SubscriptionSurveyScreen(),binding: SubscriptionSurveyBinding()),
-    GetPage(name: Routes.retirementToolsScreen, page: ()=>  RetirementToolsScreen(),binding: RetirementToolsBinding()),
-    GetPage(name: Routes.firstAmdProvokers, page: ()=>  IstAmdProvokers(),binding: IstAmdProvokersBinding()),
-    GetPage(name: Routes.profileScreen, page: ()=>  ProfileScreen(),binding: ProfileBinding()),
-    GetPage(name: Routes.settingsScreen, page: ()=>  SettingsScreen(),binding: SettingsBinding()),
-    GetPage(name: Routes.settingsLocationScreen, page: ()=>  SettingsLocationScreen(),binding: SettingsLocationBinding()),
-    GetPage(name: Routes.settingsDistanceUnitScreen, page: ()=>  SettingsDistanceUnitScreen(),binding: SettingsDistanceUnitBinding()),
-    GetPage(name: Routes.fAQsScreen, page: ()=>  FAQsScreen(),binding: FAQsBinding()),
-    GetPage(name: Routes.fAQsDetailScreen, page: ()=>  FAQsDetailScreen(),binding: FAQsDetailBinding()),
-    GetPage(name: Routes.goOfflineScreen, page: ()=>  GoOfflineScreen(),binding: GoOfflineBinding()),
-    GetPage(name: Routes.supportScreen, page: ()=>  SupportScreen(),binding: SupportBinding()),
-    GetPage(name: Routes.privacyPolicyScreen, page: ()=>  PrivacyPolicyScreen(),binding: PrivacyPolicyBinding()),
-    GetPage(name: Routes.yourDeptScreen, page: ()=>  YourDeptScreen(),binding: YourDeptBinding()),
-    GetPage(name: Routes.bellwoodPDScreen, page: ()=>  BellwoodPDScreen(),binding: BellwoodPDBinding()),
-    GetPage(name: Routes.lakeCountryScreen, page: ()=>  LakeCountryScreen(),binding: LakeCountryBinding()),
-    GetPage(name: Routes.chicagoPDScreen, page: ()=>  ChicagoPDScreen(),binding: ChicagoPDBinding()),
-    GetPage(name: Routes.lewisUniversityPDScreen, page: ()=>  LewisUniversityPDScreen(),binding: LewisUniversityPDBinding()),
-    GetPage(name: Routes.ciceroPDScreen, page: ()=>  CiceroPDScreen(),binding: CiceroPDBinding()),
-    GetPage(name: Routes.napervilleScreen, page: ()=>  NapervilleScreen(),binding: NapervilleBinding()),
-    GetPage(name: Routes.cookCountyScreen, page: ()=>  CookCountyScreen(),binding: CookCountyBinding()),
-    GetPage(name: Routes.springfieldScreen, page: ()=>  SpringfieldScreen(),binding: SpringfieldBinding()),
-    GetPage(name: Routes.dupageCountyScreen, page: ()=>  DupageCountyScreen(),binding: DupageCountyBinding()),
-    GetPage(name: Routes.rockfordPDScreen, page: ()=>  RockfordPDScreen(),binding: RockfordPDBinding()),
-    GetPage(name: Routes.grayslakePDScreen, page: ()=>  GrayslakePDScreen(),binding: GrayslakePDBinding()),
-    GetPage(name: Routes.romeopvillePDScreen, page: ()=>  RomeopvillePDScreen(),binding: RomeopvillePDBinding()),
-    GetPage(name: Routes.hometownPDScreen, page: ()=>  HometownPDScreen(),binding: HometownPDBinding()),
-    GetPage(name: Routes.willCountyScreen, page: ()=>  WillCountyScreen(),binding: WillCountyBinding()),
-    GetPage(name: Routes.jolietPDScreen, page: ()=>  JolietPDScreen(),binding: JolietPDBinding()),
-    GetPage(name: Routes.iSPDistrictsScreen, page: ()=>  ISPDistrictsScreen(),binding: ISPDistrictsBinding()),
-    GetPage(name: Routes.iSPDistrictDetailsScreen, page: ()=>  ISPDistrictDetailsScreen(),binding: ISPDistrictDetailsBinding()),
-    GetPage(name: Routes.commonCodesScreen, page: ()=>  CommonCodesScreen(),binding: CommonCodesBinding()),
-    GetPage(name: Routes.alcoholScreen, page: ()=>  AlcoholScreen(),binding: AlcoholBinding()),
-    GetPage(name: Routes.alcoholDetailScreen, page: ()=>  AlcoholDetailScreen(),binding: AlcoholDetailBinding()),
-    GetPage(name: Routes.weaponsScreen, page: ()=>  WeaponsScreen(),binding: WeaponsBinding()),
-    GetPage(name: Routes.weaponDetailScreen, page: ()=>  WeaponDetailScreen(),binding: WeaponDetailBinding()),
-    GetPage(name: Routes.domesticViolenceScreen, page: ()=>  DomesticViolenceScreen(),binding: DomesticViolenceBinding()),
-    GetPage(name: Routes.yourDeptNewYorkScreen, page: ()=>  YourDeptNewYorkScreen(),binding: YourDeptNewYorkBinding()),
-    GetPage(name: Routes.dSNYScreen, page: ()=>  DSNYScreen(),binding: DSNYBinding()),
-    GetPage(name: Routes.dSNYListScreen, page: ()=>  DSNYListScreen(),binding: DSNYListBinding()),
-    GetPage(name: Routes.dSNYListDetailScreen, page: ()=>  DSNYListDetailScreen(),binding: DSNYListDetailBinding()),
-    GetPage(name: Routes.dOCScreen, page: ()=>  DOCScreen(),binding: DOCBinding()),
-    GetPage(name: Routes.nYPDScreen, page: ()=>  NYPDScreen(),binding: NYPDBinding()),
-    GetPage(name: Routes.nassauCountyScreen, page: ()=>  NassauCountyScreen(),binding: NassauCountyBinding()),
-    GetPage(name: Routes.portAuthorityScreen, page: ()=>  PortAuthorityScreen(),binding: PortAuthorityBinding()),
-    GetPage(name: Routes.suffolkCountyScreen, page: ()=>  SuffolkCountyScreen(),binding: SuffolkCountyBinding()),
-    GetPage(name: Routes.taxiLimoScreen, page: ()=>  TaxiLimoScreen(),binding: TaxiLimoBinding()),
-    GetPage(name: Routes.yonkersScreen, page: ()=>  YonkersScreen(),binding: YonkersBinding()),
-    GetPage(name: Routes.nYCSummonsScreen, page: ()=>  NYCSummonsScreen(),binding: NYCSummonsBinding()),
-    GetPage(name: Routes.oATHECBSummonsScreen, page: ()=>  OATHECBSummonsScreen(),binding: OATHECBSummonsBinding()),
-    GetPage(name: Routes.bandCCategoryScreen, page: ()=>  BandCCategoryScreen(),binding: BandCCategoryBinding()),
-    GetPage(name: Routes.courtLocationScreen, page: ()=>  CourtLocationScreen(),binding: CourtLocationBinding()),
-    GetPage(name: Routes.nYCTransitScreen, page: ()=>  NYCTransitScreen(),binding: NYCTransitBinding()),
-    GetPage(name: Routes.rulesRegulationScreen, page: ()=>  RulesRegulationScreen(),binding: RulesRegulationBinding()),
-    GetPage(name: Routes.commonVTLScreen, page: ()=>  CommonVTLScreen(),binding: CommonVTLBinding()),
-    GetPage(name: Routes.newYorkAlcoholScreen, page: ()=>  NewYorkAlcoholScreen(),binding: NewYorkAlcoholBinding()),
-    GetPage(name: Routes.readFullLawsScreen, page: ()=>  ReadFullLawsScreen(),binding: ReadFullLawsBinding()),
-    GetPage(name: Routes.testimoniesScreen, page: ()=>  TestimoniesScreen(),binding: TestimoniesBinding()),
-    GetPage(name: Routes.cellPhonesScreen, page: ()=>  CellPhonesScreen(),binding: CellPhonesBinding()),
-    GetPage(name: Routes.otherCodesScreen, page: ()=>  OtherCodesScreen(),binding: OtherCodesBinding()),
-    GetPage(name: Routes.colorCodesScreen, page: ()=>  ColorCodesScreen(),binding: ColorCodesBinding()),
-    GetPage(name: Routes.nYStatePoliceScreen, page: ()=>  NYStatePoliceScreen(),binding: NYStatePoliceBinding()),
-    GetPage(name: Routes.nYStateDetailScreen, page: ()=>  NYStateDetailScreen(),binding: NYStateDetailBinding()),
-    GetPage(name: Routes.nYAgenciesScreen, page: ()=>  NYAgenciesScreen(),binding: NYAgenciesBinding()),
-    GetPage(name: Routes.nYAgenciesDetailScreen, page: ()=>  NYAgenciesDetailScreen(),binding: NYAgenciesDetailBinding()),
-    GetPage(name: Routes.nYSherrifScreen, page: ()=>  NYSherrifScreen(),binding: NYSherrifBinding()),
-    GetPage(name: Routes.nYSherrifDetailScreen, page: ()=>  NYSherrifDetailScreen(),binding: NYSherrifDetailBinding()),
-    GetPage(name: Routes.mileMarkersScreen, page: ()=>  MileMarkersScreen(),binding: MileMarkersBinding()),
-    GetPage(name: Routes.sHAD49Screen, page: ()=>  SHAD49Screen(),binding: SHAD49Binding()),
-    GetPage(name: Routes.facePageScreen, page: ()=>  FacePageScreen(),binding: FacePageBinding()),
-    GetPage(name: Routes.addFaceReportScreen, page: ()=>  AddFaceReportScreen(),binding: AddFaceReportBinding()),
-    GetPage(name: Routes.narrativeScreen, page: ()=>  NarrativeScreen(),binding: NarrativeBinding()),
-    GetPage(name: Routes.addNarrtaiveReportScreen, page: ()=>  AddNarrtaiveReportScreen(),binding: AddNarrativeReportBinding()),
-    GetPage(name: Routes.stationsScreen, page: ()=>  StationsScreen(),binding: StationsBinding()),
-    GetPage(name: Routes.stationsDetailScreen, page: ()=>  StationsDetailScreen(),binding: StationsDetailBinding()),
-    GetPage(name: Routes.mDCScreen, page: ()=>  MDCScreen(),binding: MDCBinding()),
-    GetPage(name: Routes.courtNoScreen, page: ()=>  CourtNoScreen(),binding: CourtNoBinding()),
-    GetPage(name: Routes.courtNoDetailScreen, page: ()=>  CourtNoDetailScreen(),binding: CourtNoDetailBinding()),
-    GetPage(name: Routes.custodyScreen, page: ()=>  CustodyScreen(),binding: CustodyBinding()),
-    GetPage(name: Routes.custodyDetailScreen, page: ()=>  CustodyDetailScreen(),binding: CustodyDetailBinding()),
-    GetPage(name: Routes.otherCommonCodesScreen, page: ()=>  OtherCommonCodesScreen(),binding: OtherCommonCodesBinding()),
-    GetPage(name: Routes.oCCDetailScreen, page: ()=>  OCCDetailScreen(),binding: OCCDetailBinding()),
-    GetPage(name: Routes.broadcastsScreen, page: ()=>  BroadcastsScreen(),binding: BroadcastsBinding()),
-    GetPage(name: Routes.statCodesScreen, page: ()=>  StatCodesScreen(),binding: StatCodesBinding()),
-    GetPage(name: Routes.phoneticsScreen, page: ()=>  PhoneticsScreen(),binding: PhoneticsBinding()),
-    GetPage(name: Routes.cHPScreen, page: ()=>  CHPScreen(),binding: CHPBinding()),
-    GetPage(name: Routes.sACRScreen, page: ()=>  SACRScreen(),binding: SACRBinding()),
-    GetPage(name: Routes.cHPOfficersScreen, page: ()=>  CHPOfficersScreen(),binding: CHPOfficersBinding()),
-    GetPage(name: Routes.cHPOfficesDetailScreen, page: ()=>  CHPOfficesDetailScreen(),binding: CHPOfficesDetailBinding()),
-    GetPage(name: Routes.pursuitsScreen, page: ()=>  PursuitsScreen(),binding: PursuitsBinding()),
-    GetPage(name: Routes.sampleReportsScreen, page: ()=>  SampleReportsScreen(),binding: SampleReportsBinding()),
-    GetPage(name: Routes.wICCodesScreen, page: ()=>  WICCodesScreen(),binding: WICCodesBinding()),
-    GetPage(name: Routes.custodyInfoScreen, page: ()=>  CustodyInfoScreen(),binding: CustodyInfoBinding()),
-    GetPage(name: Routes.mISDExceptionsScreen, page: ()=>  MISDExceptionsScreen(),binding: MISDExceptionsBinding()),
-    GetPage(name: Routes.fieldOPSScreen, page: ()=>  FieldOPSScreen(),binding: FieldOPSBinding()),
-    GetPage(name: Routes.crowDisbursementScreen, page: ()=>  CrowDisbursementScreen(),binding: CrowDisbursementBinding()),
-    GetPage(name: Routes.bradyBillScreen, page: ()=>  BradyBillScreen(),binding: BradyBillBinding()),
+    GetPage(
+      name: Routes.splashScreen,
+      page: () => const SplashScreen(),
+    ),
+    GetPage(
+      name: Routes.welcomeScreen,
+      page: () => const WelcomeScreen(),
+    ),
+    GetPage(
+        name: Routes.loginScreen,
+        page: () => LoginScreen(),
+        binding: LoginBinding()),
+    GetPage(
+        name: Routes.signupScreen,
+        page: () => SignUp(),
+        binding: SignUpBinding()),
+    GetPage(
+        name: Routes.forgotPasswordScreen,
+        page: () => ForgotPassword(),
+        binding: ForgotPasswordBinding()),
+    GetPage(
+        name: Routes.verificationCodeScreen,
+        page: () => VerificationCode(),
+        binding: VerficationBinding()),
+    GetPage(
+        name: Routes.newPasswordScreen,
+        page: () => NewPassword(),
+        binding: NewPasswordBinding()),
+    GetPage(
+        name: Routes.passwordUpdateScreen,
+        page: () => PasswordUpdate(),
+        binding: PasswordUpdateBinding()),
+    GetPage(
+        name: Routes.dashBoardScreen,
+        page: () => DashBoard(),
+        binding: DashBoardBinding()),
+    GetPage(
+        name: Routes.translatorScreen,
+        page: () => TranslatorScreen(),
+        binding: TranslatorBinding()),
+    GetPage(
+        name: Routes.commonPhraseScreen,
+        page: () => CommonPhraseScreen(),
+        binding: CommonPhrasesBinding()),
+    GetPage(
+        name: Routes.audioScreen,
+        page: () => AudioScreen(),
+        binding: AudioBinding()),
+    GetPage(
+        name: Routes.ageResultScreen,
+        page: () => AgeResultScreen(),
+        binding: AgeResultBinding()),
+    GetPage(
+        name: Routes.gangSlangDetailScreen,
+        page: () => GangSlangDetailScreen(),
+        binding: GangSlangDetailBinding()),
+    GetPage(
+        name: Routes.nHTSAManualScreen,
+        page: () => SFSTMoreOptionScreen(),
+        binding: SFTAMoreOptionBinding()),
+    GetPage(
+        name: Routes.lawCaseDetailScreen,
+        page: () => CaseLawDetailScreen(),
+        binding: CaseLawDetailsBinding()),
+    GetPage(
+      name: Routes.trespasserApbDetailsScreen,
+      page: () => TrespasserApbDetailsScreen(),
+      binding: TrespasserApbDetailBinding(),
+    ),
+    GetPage(
+        name: Routes.addTrespasserDetailsScreen,
+        page: () => AddTrespasserDetailsScreen(),
+        binding: TrespasserAddDetailBinding()),
+    GetPage(
+        name: Routes.flashCardsScreen,
+        page: () => FlashCardsScreen(),
+        binding: FlashCardsBinding()),
+    GetPage(
+        name: Routes.flashCardsListScreen,
+        page: () => FlashCardsListScreen(),
+        binding: FlashCardListBinding()),
+    GetPage(
+        name: Routes.flashCardAddDetailsScreen,
+        page: () => FlashCardAddDetailsScreen(),
+        binding: FlashCardAddDetailBinding()),
+    GetPage(
+        name: Routes.pATTrackerListScreen,
+        page: () => PATTrackerListScreen(),
+        binding: PatTrackerListBinding()),
+    GetPage(
+        name: Routes.pATTrackerDetailScreen,
+        page: () => PATTrackerDetailScreen(),
+        binding: PtaTrackerDetailBinding()),
+    GetPage(
+        name: Routes.pATTrackerAddDetailsScreen,
+        page: () => PATTrackerAddDetailsScreen(),
+        binding: PatTrackerAddDetailBinding()),
+    GetPage(
+        name: Routes.askQuestionScreen,
+        page: () => AskQuestionScreen(),
+        binding: AskQuestionBinding()),
+    GetPage(
+        name: Routes.responseScreen,
+        page: () => ResponseScreen(),
+        binding: ResponseBinding()),
+    GetPage(
+        name: Routes.addResponseScreen,
+        page: () => AddResponseScreen(),
+        binding: AddResponseBinding()),
+    GetPage(
+        name: Routes.locationScreen,
+        page: () => LocationScreen(),
+        binding: LocationBinding()),
+    GetPage(
+        name: Routes.locationMoreInfoScreen,
+        page: () => LocationMoreInfoScreen(),
+        binding: LocationMoreInfoBinding()),
+    GetPage(
+        name: Routes.locationAddDetailsScreen,
+        page: () => LocationAddDetailsScreen(),
+        binding: LocationAddDetailBinding()),
+    GetPage(
+        name: Routes.trafficCodeScreen,
+        page: () => TrafficCodeScreen(),
+        binding: TrafficCodeBinding()),
+    GetPage(
+        name: Routes.trafficCodeAddDetailScreen,
+        page: () => TrafficCodeAddDetailScreen(),
+        binding: TrafficAddDetailsBinding()),
+    GetPage(
+        name: Routes.importantInfoScreen,
+        page: () => ImportantInfoScreen(),
+        binding: ImportantInfoBinding()),
+    GetPage(
+        name: Routes.switchStateScreen,
+        page: () => SwitchStateScreen(),
+        binding: SwitchStateBinding()),
+    GetPage(
+        name: Routes.redeemCardScreen,
+        page: () => RedeemCardScreen(),
+        binding: RedeemCardBinding()),
+    GetPage(
+        name: Routes.subscribeScreen,
+        page: () => SubscribeScreen(),
+        binding: SubscribeBinding()),
+    GetPage(
+        name: Routes.switchStateChangeScreen,
+        page: () => SwitchStateChangeScreen(),
+        binding: SwitchStateChangeBinding()),
+    GetPage(
+        name: Routes.warrantsScreen,
+        page: () => Warrants(),
+        binding: WarrantsBinding()),
+    GetPage(
+        name: Routes.federalCodeScreen,
+        page: () => FederalCode(),
+        binding: FederalCodeBiding()),
+    GetPage(
+        name: Routes.lessLethalScreen,
+        page: () => LessLethal(),
+        binding: LessLethalBinding()),
+    GetPage(
+        name: Routes.drugsRelatedScreen,
+        page: () => DrugsRelated(),
+        binding: DrugsRelatedBinding()),
+    GetPage(
+        name: Routes.deadCheckListScreen,
+        page: () => DeadCheckListScreen(),
+        binding: DeadChecklistBinding()),
+    GetPage(
+        name: Routes.ageCalculationScreen,
+        page: () => AgeCalculationScreen(),
+        binding: AgeCalculationBinding()),
+    GetPage(
+        name: Routes.gangSlangScreen,
+        page: () => GangSlangScreen(),
+        binding: GangSlanBinding()),
+    GetPage(
+        name: Routes.traficInvestigationScreen,
+        page: () => TraficInvestigationScreen(),
+        binding: TrafficInvestigationBinding()),
+    GetPage(
+        name: Routes.testifyingTipsScreen,
+        page: () => TestifyingTipsScreen(),
+        binding: TestifyingBinding()),
+    GetPage(
+        name: Routes.windowTintLawsScreen,
+        page: () => WindowTintLawsScreen(),
+        binding: WindowTintLawsBinding()),
+    GetPage(
+        name: Routes.standardizedFST,
+        page: () => StandardizedFST(),
+        binding: StandardizedFstsBinding()),
+    GetPage(
+        name: Routes.caseLawScreen,
+        page: () => CaseLawScreen(),
+        binding: CaseLawBinding()),
+    GetPage(
+        name: Routes.gladysMarsyScreen,
+        page: () => GladysMarsyScreen(),
+        binding: GladysMarsyBinding()),
+    GetPage(
+        name: Routes.gladysAdmonitionScreen,
+        page: () => GladysRAdmonitionScreen(),
+        binding: GladysAdmonitionBinding()),
+    GetPage(
+        name: Routes.marsyLawScreen,
+        page: () => MarsyLawScreen(),
+        binding: MarsysLawBinding()),
+    GetPage(
+        name: Routes.mirandaScreen,
+        page: () => MirandaScreen(),
+        binding: MirandaBinding()),
+    GetPage(
+        name: Routes.keysToCastleScreen,
+        page: () => KeysToCastleScreen(),
+        binding: KeysToCastleBinding()),
+    GetPage(
+        name: Routes.exigentCircumstancesScreen,
+        page: () => ExigentCircumstancesScreen(),
+        binding: ExigentCircumstancesBinding()),
+    GetPage(
+        name: Routes.vehicleStopFormScreen,
+        page: () => VehicleStopFormScreen(),
+        binding: VehicleStopFormBinding()),
+    GetPage(
+        name: Routes.trespasserAPBScreen,
+        page: () => TrespasserAPBScreen(),
+        binding: TrespasserApbBinding()),
+    GetPage(
+        name: Routes.frontPlatesScreen,
+        page: () => FrontPlatesScreen(),
+        binding: FrontPlatesBinding()),
+    GetPage(
+        name: Routes.recruitsStudyingScreen,
+        page: () => RecruitsStudyingScreen(),
+        binding: RecruitsStudyingBunding()),
+    GetPage(
+        name: Routes.subscriptionSurveyScreen,
+        page: () => SubscriptionSurveyScreen(),
+        binding: SubscriptionSurveyBinding()),
+    GetPage(
+        name: Routes.retirementToolsScreen,
+        page: () => RetirementToolsScreen(),
+        binding: RetirementToolsBinding()),
+    GetPage(
+        name: Routes.firstAmdProvokers,
+        page: () => IstAmdProvokers(),
+        binding: IstAmdProvokersBinding()),
+    GetPage(
+        name: Routes.profileScreen,
+        page: () => ProfileScreen(),
+        binding: ProfileBinding()),
+    GetPage(
+        name: Routes.settingsScreen,
+        page: () => SettingsScreen(),
+        binding: SettingsBinding()),
+    GetPage(
+        name: Routes.settingsLocationScreen,
+        page: () => SettingsLocationScreen(),
+        binding: SettingsLocationBinding()),
+    GetPage(
+        name: Routes.settingsDistanceUnitScreen,
+        page: () => SettingsDistanceUnitScreen(),
+        binding: SettingsDistanceUnitBinding()),
+    GetPage(
+        name: Routes.fAQsScreen,
+        page: () => FAQsScreen(),
+        binding: FAQsBinding()),
+    GetPage(
+        name: Routes.fAQsDetailScreen,
+        page: () => FAQsDetailScreen(),
+        binding: FAQsDetailBinding()),
+    GetPage(
+        name: Routes.goOfflineScreen,
+        page: () => GoOfflineScreen(),
+        binding: GoOfflineBinding()),
+    GetPage(
+        name: Routes.supportScreen,
+        page: () => SupportScreen(),
+        binding: SupportBinding()),
+    GetPage(
+        name: Routes.privacyPolicyScreen,
+        page: () => PrivacyPolicyScreen(),
+        binding: PrivacyPolicyBinding()),
+    GetPage(
+        name: Routes.yourDeptScreen,
+        page: () => YourDeptScreen(),
+        binding: YourDeptBinding()),
+    GetPage(
+        name: Routes.bellwoodPDScreen,
+        page: () => BellwoodPDScreen(),
+        binding: BellwoodPDBinding()),
+    GetPage(
+        name: Routes.lakeCountryScreen,
+        page: () => LakeCountryScreen(),
+        binding: LakeCountryBinding()),
+    GetPage(
+        name: Routes.chicagoPDScreen,
+        page: () => ChicagoPDScreen(),
+        binding: ChicagoPDBinding()),
+    GetPage(
+        name: Routes.lewisUniversityPDScreen,
+        page: () => LewisUniversityPDScreen(),
+        binding: LewisUniversityPDBinding()),
+    GetPage(
+        name: Routes.ciceroPDScreen,
+        page: () => CiceroPDScreen(),
+        binding: CiceroPDBinding()),
+    GetPage(
+        name: Routes.napervilleScreen,
+        page: () => NapervilleScreen(),
+        binding: NapervilleBinding()),
+    GetPage(
+        name: Routes.cookCountyScreen,
+        page: () => CookCountyScreen(),
+        binding: CookCountyBinding()),
+    GetPage(
+        name: Routes.springfieldScreen,
+        page: () => SpringfieldScreen(),
+        binding: SpringfieldBinding()),
+    GetPage(
+        name: Routes.dupageCountyScreen,
+        page: () => DupageCountyScreen(),
+        binding: DupageCountyBinding()),
+    GetPage(
+        name: Routes.rockfordPDScreen,
+        page: () => RockfordPDScreen(),
+        binding: RockfordPDBinding()),
+    GetPage(
+        name: Routes.grayslakePDScreen,
+        page: () => GrayslakePDScreen(),
+        binding: GrayslakePDBinding()),
+    GetPage(
+        name: Routes.romeopvillePDScreen,
+        page: () => RomeopvillePDScreen(),
+        binding: RomeopvillePDBinding()),
+    GetPage(
+        name: Routes.hometownPDScreen,
+        page: () => HometownPDScreen(),
+        binding: HometownPDBinding()),
+    GetPage(
+        name: Routes.willCountyScreen,
+        page: () => WillCountyScreen(),
+        binding: WillCountyBinding()),
+    GetPage(
+        name: Routes.jolietPDScreen,
+        page: () => JolietPDScreen(),
+        binding: JolietPDBinding()),
+    GetPage(
+        name: Routes.iSPDistrictsScreen,
+        page: () => ISPDistrictsScreen(),
+        binding: ISPDistrictsBinding()),
+    GetPage(
+        name: Routes.iSPDistrictDetailsScreen,
+        page: () => ISPDistrictDetailsScreen(),
+        binding: ISPDistrictDetailsBinding()),
+    GetPage(
+        name: Routes.commonCodesScreen,
+        page: () => CommonCodesScreen(),
+        binding: CommonCodesBinding()),
+    GetPage(
+        name: Routes.alcoholScreen,
+        page: () => AlcoholScreen(),
+        binding: AlcoholBinding()),
+    GetPage(
+        name: Routes.alcoholDetailScreen,
+        page: () => AlcoholDetailScreen(),
+        binding: AlcoholDetailBinding()),
+    GetPage(
+        name: Routes.weaponsScreen,
+        page: () => WeaponsScreen(),
+        binding: WeaponsBinding()),
+    GetPage(
+        name: Routes.weaponDetailScreen,
+        page: () => WeaponDetailScreen(),
+        binding: WeaponDetailBinding()),
+    GetPage(
+        name: Routes.domesticViolenceScreen,
+        page: () => DomesticViolenceScreen(),
+        binding: DomesticViolenceBinding()),
+    GetPage(
+        name: Routes.yourDeptNewYorkScreen,
+        page: () => YourDeptNewYorkScreen(),
+        binding: YourDeptNewYorkBinding()),
+    GetPage(
+        name: Routes.dSNYScreen,
+        page: () => DSNYScreen(),
+        binding: DSNYBinding()),
+    GetPage(
+        name: Routes.dSNYListScreen,
+        page: () => DSNYListScreen(),
+        binding: DSNYListBinding()),
+    GetPage(
+        name: Routes.dSNYListDetailScreen,
+        page: () => DSNYListDetailScreen(),
+        binding: DSNYListDetailBinding()),
+    GetPage(
+        name: Routes.dOCScreen, page: () => DOCScreen(), binding: DOCBinding()),
+    GetPage(
+        name: Routes.nYPDScreen,
+        page: () => NYPDScreen(),
+        binding: NYPDBinding()),
+    GetPage(
+        name: Routes.nassauCountyScreen,
+        page: () => NassauCountyScreen(),
+        binding: NassauCountyBinding()),
+    GetPage(
+        name: Routes.portAuthorityScreen,
+        page: () => PortAuthorityScreen(),
+        binding: PortAuthorityBinding()),
+    GetPage(
+        name: Routes.suffolkCountyScreen,
+        page: () => SuffolkCountyScreen(),
+        binding: SuffolkCountyBinding()),
+    GetPage(
+        name: Routes.taxiLimoScreen,
+        page: () => TaxiLimoScreen(),
+        binding: TaxiLimoBinding()),
+    GetPage(
+        name: Routes.yonkersScreen,
+        page: () => YonkersScreen(),
+        binding: YonkersBinding()),
+    GetPage(
+        name: Routes.nYCSummonsScreen,
+        page: () => NYCSummonsScreen(),
+        binding: NYCSummonsBinding()),
+    GetPage(
+        name: Routes.oATHECBSummonsScreen,
+        page: () => OATHECBSummonsScreen(),
+        binding: OATHECBSummonsBinding()),
+    GetPage(
+        name: Routes.bandCCategoryScreen,
+        page: () => BandCCategoryScreen(),
+        binding: BandCCategoryBinding()),
+    GetPage(
+        name: Routes.courtLocationScreen,
+        page: () => CourtLocationScreen(),
+        binding: CourtLocationBinding()),
+    GetPage(
+        name: Routes.nYCTransitScreen,
+        page: () => NYCTransitScreen(),
+        binding: NYCTransitBinding()),
+    GetPage(
+        name: Routes.rulesRegulationScreen,
+        page: () => RulesRegulationScreen(),
+        binding: RulesRegulationBinding()),
+    GetPage(
+        name: Routes.commonVTLScreen,
+        page: () => CommonVTLScreen(),
+        binding: CommonVTLBinding()),
+    GetPage(
+        name: Routes.newYorkAlcoholScreen,
+        page: () => NewYorkAlcoholScreen(),
+        binding: NewYorkAlcoholBinding()),
+    GetPage(
+        name: Routes.readFullLawsScreen,
+        page: () => ReadFullLawsScreen(),
+        binding: ReadFullLawsBinding()),
+    GetPage(
+        name: Routes.testimoniesScreen,
+        page: () => TestimoniesScreen(),
+        binding: TestimoniesBinding()),
+    GetPage(
+        name: Routes.cellPhonesScreen,
+        page: () => CellPhonesScreen(),
+        binding: CellPhonesBinding()),
+    GetPage(
+        name: Routes.otherCodesScreen,
+        page: () => OtherCodesScreen(),
+        binding: OtherCodesBinding()),
+    GetPage(
+        name: Routes.colorCodesScreen,
+        page: () => ColorCodesScreen(),
+        binding: ColorCodesBinding()),
+    GetPage(
+        name: Routes.nYStatePoliceScreen,
+        page: () => NYStatePoliceScreen(),
+        binding: NYStatePoliceBinding()),
+    GetPage(
+        name: Routes.nYStateDetailScreen,
+        page: () => NYStateDetailScreen(),
+        binding: NYStateDetailBinding()),
+    GetPage(
+        name: Routes.nYAgenciesScreen,
+        page: () => NYAgenciesScreen(),
+        binding: NYAgenciesBinding()),
+    GetPage(
+        name: Routes.nYAgenciesDetailScreen,
+        page: () => NYAgenciesDetailScreen(),
+        binding: NYAgenciesDetailBinding()),
+    GetPage(
+        name: Routes.nYSherrifScreen,
+        page: () => NYSherrifScreen(),
+        binding: NYSherrifBinding()),
+    GetPage(
+        name: Routes.nYSherrifDetailScreen,
+        page: () => NYSherrifDetailScreen(),
+        binding: NYSherrifDetailBinding()),
+    GetPage(
+        name: Routes.mileMarkersScreen,
+        page: () => MileMarkersScreen(),
+        binding: MileMarkersBinding()),
+    GetPage(
+        name: Routes.sHAD49Screen,
+        page: () => SHAD49Screen(),
+        binding: SHAD49Binding()),
+    GetPage(
+        name: Routes.facePageScreen,
+        page: () => FacePageScreen(),
+        binding: FacePageBinding()),
+    GetPage(
+        name: Routes.addFaceReportScreen,
+        page: () => AddFaceReportScreen(),
+        binding: AddFaceReportBinding()),
+    GetPage(
+        name: Routes.narrativeScreen,
+        page: () => NarrativeScreen(),
+        binding: NarrativeBinding()),
+    GetPage(
+        name: Routes.addNarrtaiveReportScreen,
+        page: () => AddNarrtaiveReportScreen(),
+        binding: AddNarrativeReportBinding()),
+    GetPage(
+        name: Routes.stationsScreen,
+        page: () => StationsScreen(),
+        binding: StationsBinding()),
+    GetPage(
+        name: Routes.stationsDetailScreen,
+        page: () => StationsDetailScreen(),
+        binding: StationsDetailBinding()),
+    GetPage(
+        name: Routes.mDCScreen, page: () => MDCScreen(), binding: MDCBinding()),
+    GetPage(
+        name: Routes.courtNoScreen,
+        page: () => CourtNoScreen(),
+        binding: CourtNoBinding()),
+    GetPage(
+        name: Routes.courtNoDetailScreen,
+        page: () => CourtNoDetailScreen(),
+        binding: CourtNoDetailBinding()),
+    GetPage(
+        name: Routes.custodyScreen,
+        page: () => CustodyScreen(),
+        binding: CustodyBinding()),
+    GetPage(
+        name: Routes.custodyDetailScreen,
+        page: () => CustodyDetailScreen(),
+        binding: CustodyDetailBinding()),
+    GetPage(
+        name: Routes.otherCommonCodesScreen,
+        page: () => OtherCommonCodesScreen(),
+        binding: OtherCommonCodesBinding()),
+    GetPage(
+        name: Routes.oCCDetailScreen,
+        page: () => OCCDetailScreen(),
+        binding: OCCDetailBinding()),
+    GetPage(
+        name: Routes.broadcastsScreen,
+        page: () => BroadcastsScreen(),
+        binding: BroadcastsBinding()),
+    GetPage(
+        name: Routes.statCodesScreen,
+        page: () => StatCodesScreen(),
+        binding: StatCodesBinding()),
+    GetPage(
+        name: Routes.phoneticsScreen,
+        page: () => PhoneticsScreen(),
+        binding: PhoneticsBinding()),
+    GetPage(
+        name: Routes.cHPScreen, page: () => CHPScreen(), binding: CHPBinding()),
+    GetPage(
+        name: Routes.sACRScreen,
+        page: () => SACRScreen(),
+        binding: SACRBinding()),
+    GetPage(
+        name: Routes.cHPOfficersScreen,
+        page: () => CHPOfficersScreen(),
+        binding: CHPOfficersBinding()),
+    GetPage(
+        name: Routes.cHPOfficesDetailScreen,
+        page: () => CHPOfficesDetailScreen(),
+        binding: CHPOfficesDetailBinding()),
+    GetPage(
+        name: Routes.pursuitsScreen,
+        page: () => PursuitsScreen(),
+        binding: PursuitsBinding()),
+    GetPage(
+        name: Routes.sampleReportsScreen,
+        page: () => SampleReportsScreen(),
+        binding: SampleReportsBinding()),
+    GetPage(
+        name: Routes.wICCodesScreen,
+        page: () => WICCodesScreen(),
+        binding: WICCodesBinding()),
+    GetPage(
+        name: Routes.custodyInfoScreen,
+        page: () => CustodyInfoScreen(),
+        binding: CustodyInfoBinding()),
+    GetPage(
+        name: Routes.mISDExceptionsScreen,
+        page: () => MISDExceptionsScreen(),
+        binding: MISDExceptionsBinding()),
+    GetPage(
+        name: Routes.fieldOPSScreen,
+        page: () => FieldOPSScreen(),
+        binding: FieldOPSBinding()),
+    GetPage(
+        name: Routes.crowDisbursementScreen,
+        page: () => CrowDisbursementScreen(),
+        binding: CrowDisbursementBinding()),
+    GetPage(
+        name: Routes.bradyBillScreen,
+        page: () => BradyBillScreen(),
+        binding: BradyBillBinding()),
   ];
 }

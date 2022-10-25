@@ -7,12 +7,14 @@ import 'package:brainbook/global_controller/email_password_validator.dart';
 import 'package:brainbook/global_widgets/elevated_button.dart';
 import 'package:brainbook/global_widgets/rich_text.dart';
 import 'package:brainbook/global_widgets/text_form_field.dart';
+import 'package:brainbook/routes/app_pages.dart';
 import 'package:brainbook/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart' hide Response;
 import 'signup_controller.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class SignUp extends GetView<SignUpController> {
   SignUp({Key? key}) : super(key: key);
@@ -134,11 +136,18 @@ class SignUp extends GetView<SignUpController> {
               ),
               ButtonWidget(
                 title: "CREATE ACCOUNT",
-                // onTap: () => Get.toNamed(Routes.dashBoardScreen)
-                //controller.onCreateTap,
+                // onTap: () => Get.toNamed(Routes.loginScreen),
+
+                // controller.onCreateTap,
+                // onTap: () {
+                //   Get.toNamed(Routes.loginScreen);
+                //     controller.SignUpAuth(controller.emailController.text,
+                //         controller.passwordController.text);
+                // },
                 onTap: () {
-                  Get.toNamed(Routes.dashBoardScreen);
-                  controller.SignUpAuth(controller.emailController.text, controller.passwordController.text);
+                  Get.toNamed(Routes.loginScreen);
+                  controller.SignUpAuth(controller.emailController.text,
+                      controller.passwordController.text);
                 },
               ),
               const SizedBox(
