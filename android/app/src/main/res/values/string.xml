@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">BrainB</string>
+<string name="facebook_app_id">56789</string>
+<string name="fb_login_protocol_scheme">fb56789</string>
+<string name="facebook_client_token">56789</string>
+</resources>
+
+
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Name here</string>
+    <string name="facebook_app_id">2206883509627625</string>
+    <string name="fb_login_protocol_scheme">fb2206883509627625</string>
+</resources> -->

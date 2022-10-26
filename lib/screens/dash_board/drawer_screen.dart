@@ -1,18 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:brainbook/core/theme/values/colors.dart';
+import 'package:brainbook/routes/app_pages.dart';
+import 'package:brainbook/routes/app_routes.dart';
 import 'package:brainbook/screens/dash_board/dash_board_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'widgets/drawer_header.dart';
 
 class NavigationDrawerScreen extends GetView<DashBoardController> {
-  NavigationDrawerScreen(  {Key? key}) : super(key: key);
+  NavigationDrawerScreen({Key? key}) : super(key: key);
   //NavigationDrawerScreen( this.token,  {Key? key}) : super(key: key);
 
   //ProfileController profileController = Get.find();
 
   final padding = EdgeInsets.symmetric(horizontal: 20);
+  final auth = FirebaseAuth.instance;
 //final String token;
 
   @override
@@ -37,25 +42,33 @@ class NavigationDrawerScreen extends GetView<DashBoardController> {
                         : 0,
                   ),
                   child: ListTile(
-                    leading: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12.0),
-                      child: Image.asset(
-                        controller.drawerImages[index],
+                      leading: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        child: Image.asset(
+                          controller.drawerImages[index],
+                        ),
                       ),
-                    ),
-                    title: Text(
-                      controller.drawerTitle[index],
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: index == controller.drawerTitle.length - 1
-                              ? fontColorDark
-                              : Colors.black),
-                    ),
-                    hoverColor: Colors.white70,
-                     // onTap: ()=>Get.toNamed(controller.drawerRoutes[index]==0?profileController.Profile():controller.drawerRoutes[index],arguments: {token}),
-                      onTap: ()=>Get.toNamed(controller.drawerRoutes[index],),
-                     // onTap: ()=>Get.toNamed(controller.drawerRoutes[index],arguments: token),
-                  ),
+                      title: Text(
+                        controller.drawerTitle[index],
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: index == controller.drawerTitle.length - 1
+                                ? fontColorDark
+                                : Colors.black),
+                      ),
+                      hoverColor: Colors.white70,
+                      // onTap: ()=>Get.toNamed(controller.drawerRoutes[index]==0?profileController.Profile():controller.drawerRoutes[index],arguments: {token}),
+                      onTap: () {
+                        if (index == 6) {
+                          auth.signOut();
+                          print('logOut');
+                          // Get.toNamed(controller.drawerRoutes[4]);
+                          // Get.toNamed(Routes.loginScreen);
+                        }
+                        Get.toNamed(controller.drawerRoutes[index]);
+                      }
+                      // onTap: ()=>Get.toNamed(controller.drawerRoutes[index],arguments: token),
+                      ),
                 );
               },
             ),

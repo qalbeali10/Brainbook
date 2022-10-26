@@ -15,6 +15,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 
 class LoginScreen extends GetView<LoginController> {
   LoginScreen({Key? key}) : super(key: key);
@@ -140,7 +142,7 @@ class LoginScreen extends GetView<LoginController> {
                     onTap: () async {
                       await LoginController;
                       controller.signInWithGoogle();
-                      Get.toNamed(Routes.dashBoardScreen);
+                      Get.offAllNamed(Routes.dashBoardScreen);
                     },
                     child: Card(
                       color: Colors.white,
@@ -155,7 +157,11 @@ class LoginScreen extends GetView<LoginController> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () async {
+                      await LoginController;
+                      controller.signInWithFacebook();
+                      //Get.toNamed(Routes.dashBoardScreen);
+                    },
                     child: Card(
                       color: Colors.white,
                       child: Padding(

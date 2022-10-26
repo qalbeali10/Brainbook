@@ -56,7 +56,7 @@ class SignUp extends GetView<SignUpController> {
                 icon: const Icon(Icons.email_outlined, color: fontColorDark),
                 obscureText: false,
                 controller: controller.emailController,
-                validator: validatorController.emailValidator,
+                validator: validatorController.,
               ),
               const SizedBox(
                 height: 20,
@@ -145,9 +145,15 @@ class SignUp extends GetView<SignUpController> {
                 //         controller.passwordController.text);
                 // },
                 onTap: () {
-                  Get.toNamed(Routes.loginScreen);
-                  controller.SignUpAuth(controller.emailController.text,
-                      controller.passwordController.text);
+                  if (controller.globalKey.currentState!.validate()) {
+                    Get.toNamed(Routes.loginScreen);
+                    controller.SignUpAuth(controller.emailController.text,
+                        controller.passwordController.text);
+                  } else {
+                    Get.toNamed(Routes.signupScreen);
+                  }
+
+                  // Get.toNamed(Routes.loginScreen);
                 },
               ),
               const SizedBox(

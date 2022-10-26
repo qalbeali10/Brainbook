@@ -70,11 +70,10 @@ class DashBoardController extends GetxController {
     MoreOptionScreen(),
   ];
 
-
   Widget get currentPage => pages[currentIndex.value];
 
   void changePage(int _index) {
-        currentIndex.value = _index;
+    currentIndex.value = _index;
     switch (_index) {
       case 0:
         {
@@ -107,8 +106,6 @@ class DashBoardController extends GetxController {
   }
 }
 
-
-
 class CumtomDialog extends StatelessWidget {
   CumtomDialog({Key? key}) : super(key: key);
 
@@ -125,11 +122,14 @@ class CumtomDialog extends StatelessWidget {
         children: [
           SizedBox(height: 12),
           Text(
-            "Welcome to Ask a Cop",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+            "Welcome to Ask a Cop",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
           SizedBox(height: 6),
           Text(
-              "Talk about anything you want. Pocket Brainbook does not monitor this forum. If you have question visit the FAQ's section",textAlign: TextAlign.center,),
+            "Talk about anything you want. Pocket Brainbook does not monitor this forum. If you have question visit the FAQ's section",
+            textAlign: TextAlign.center,
+          ),
           SizedBox(height: 15),
           Container(
               width: 130,
@@ -137,7 +137,7 @@ class CumtomDialog extends StatelessWidget {
                   BoxDecoration(borderRadius: BorderRadius.circular(20)),
               child: ButtonWidget(
                 title: "Ok",
-                onTap: ()=>Get.back(),
+                onTap: () => Get.back(),
                 padding: EdgeInsets.symmetric(vertical: 10),
                 borderRadiusGeometry: BorderRadius.circular(20),
                 borderRadiusGeometry2: BorderRadius.circular(20),
